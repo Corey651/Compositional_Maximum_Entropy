@@ -10,6 +10,7 @@ import SpecialFunctions.logerfc
 logerfc(x::Real) = _logerfc(float(x))
 
 function _logerfc(x::Real)
+    if x> 0.0
         return log(erfcx(x)) - x^2
     else
         return log(erfc(x))
